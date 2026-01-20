@@ -2,26 +2,64 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>Meli Recipes</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>meli | وصفات طبخ</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('[data-ar]').forEach(el => {
+        el.innerText = lang === 'ar' ? el.dataset.ar : el.dataset.de;
+      });
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    }
+  </script>
 </head>
-<body>
+<body onload="switchLang('ar')">
 
-<header>
-  <h1>Meli Recipes</h1>
-  <p data-ar="وصفات منزلية دافئة خطوة بخطوة"
-     data-de="Warme hausgemachte Rezepte Schritt für Schritt"></p>
-  <button onclick="setLang('ar')">عربي</button>
-  <button onclick="setLang('de')">Deutsch</button>
-</header>
+  <header>
+    <div class="lang-switch">
+      <button onclick="switchLang('ar')">العربية</button>
+      <button onclick="switchLang('de')">Deutsch</button>
+    </div>
+    <h1>🍰 meli</h1>
+    <p data-ar="وصفات دافئة بطابع أنثوي" data-de="Warme Rezepte mit femininem Stil"></p>
+  </header>
 
-<section class="card">
-  <h2 data-ar="وصفة اليوم" data-de="Rezept des Tages"></h2>
-  <p data-ar="موساكا الباذنجان اللذيذة"
-     data-de="Leckere Auberginen-Moussaka"></p>
-</section>
+  <section class="hero">
+    <h2 data-ar="أهلاً بكِ في عالم meli" data-de="Willkommen in der Welt von meli"></h2>
+    <p data-ar="وصفات سهلة، منزلية، ولمسة حب في كل طبق 💕"
+       data-de="Einfache hausgemachte Rezepte mit Liebe 💕"></p>
+  </section>
 
-<script src="js/lang.js"></script>
+  <section class="recipes">
+    <div class="card">
+      <div class="img">🧁</div>
+      <h3 data-ar="كب كيك الفانيليا" data-de="Vanille Cupcakes"></h3>
+      <p data-ar="هشّة، خفيفة ومثالية مع القهوة."
+         data-de="Locker, leicht und perfekt zum Kaffee."></p>
+    </div>
+
+    <div class="card">
+      <div class="img">🍝</div>
+      <h3 data-ar="باستا كريمية" data-de="Cremige Pasta"></h3>
+      <p data-ar="وصفة سريعة بطعم غني."
+         data-de="Schnelles Rezept mit vollem Geschmack."></p>
+    </div>
+
+    <div class="card">
+      <div class="img">🥗</div>
+      <h3 data-ar="سلطة صحية" data-de="Gesunder Salat"></h3>
+      <p data-ar="خفيفة ومنعشة لكل يوم."
+         data-de="Leicht und erfrischend für jeden Tag."></p>
+    </div>
+  </section>
+
+  <footer>
+    <p data-ar="© 2026 meli – بكل حب 💗"
+       data-de="© 2026 meli – mit Liebe 💗"></p>
+  </footer>
+
 </body>
 </html>
